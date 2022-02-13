@@ -1,5 +1,6 @@
 ﻿
 using BookAcademy.DataAccess;
+using BookAcademy.DataAccess.Repository.IRepository;
 using BookAcademy.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,15 +8,15 @@ namespace BookAcademyWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(ApplicationDbContext db)
+        public CategoryController(IUnitOfWork db)
         {
-            _db = db;
+            _unitOfWork = db;
         }
         public IActionResult Index()
         {
-            IEnumerable<Category> objCategoryList = _db.Categories;
+            IEnumerable<Category> objCategoryList = _unitOfWork.Category.GetAll();
             return View(objCategoryList);
         }
 
@@ -36,8 +37,8 @@ namespace BookAcademyWeb.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(obj);
-                _db.SaveChanges();
+                _unitOfWork.Category.Add(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Category created succesfully";
                 return RedirectToAction("Index");//we could reditrect to another contorller action
             }
@@ -52,9 +53,7 @@ namespace BookAcademyWeb.Controllers
             {
                 return NotFound();
             }
-            var category = _db.Categories.Find(id);
-            //var category2 = _db.Categories.FirstOrDefault(category => category.Id == id);
-            //var category2 = _db.Categories.SingleOrDefault(category => category.Id == id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id );
 
             if (category is null)
             {
@@ -74,8 +73,8 @@ namespace BookAcademyWeb.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _unitOfWork.Category.Update(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Category edited succesfully";
                 return RedirectToAction("Index");//we could reditrect to another contorller action
             }
@@ -90,8 +89,8 @@ namespace BookAcademyWeb.Controllers
             {
                 return NotFound();
             }
-            var category = _db.Categories.Find(id);
-            //var category2 = _db.Categories.FirstOrDefault(category => category.Id == id);
+            //var category = _db.Categories.Find(id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(category => category.Id == id);
             //var category2 = _db.Categories.SingleOrDefault(category => category.Id == id);
 
             if (category is null)
@@ -107,14 +106,14 @@ namespace BookAcademyWeb.Controllers
         public IActionResult DeletePOST(int? id)
         {
 
-            var obj = _db.Categories.Find(id);
+            var obj = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
 
-            _db.Categories.Remove(obj);
-            _db.SaveChanges();
+            _unitOfWork.Category.Remove(obj);
+            _unitOfWork.Save();
             TempData["success"] = "Category deleted succesfully";
             return RedirectToAction("Index");//we could reditrect to another contorller action
             
