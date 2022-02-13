@@ -1,7 +1,8 @@
-﻿using BookAcademyWeb.Models;
+﻿
+using BookAcademy.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookAcademyWeb.Data
+namespace BookAcademy.DataAccess
 {
     public class ApplicationDbContext : DbContext
     {

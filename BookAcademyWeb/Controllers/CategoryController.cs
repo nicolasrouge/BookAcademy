@@ -1,5 +1,6 @@
-﻿using BookAcademyWeb.Data;
-using BookAcademyWeb.Models;
+﻿
+using BookAcademy.DataAccess;
+using BookAcademy.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookAcademyWeb.Controllers

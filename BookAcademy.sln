@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookAcademyWeb", "BookAcade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookAcademy.DataAccess", "BookAcademy.DataAccess\BookAcademy.DataAccess.csproj", "{46F81B43-2123-401B-ADCB-BFEA232632C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookAcademy.Models", "BookAcademy.Models\BookAcademy.Models.csproj", "{18AB290B-C44C-4B8A-8809-DAA11DBE056D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookAcademy.Utility", "BookAcademy.Utility\BookAcademy.Utility.csproj", "{8B7882E9-E5DE-44F3-9B28-68ED2AEAA7E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18AB290B-C44C-4B8A-8809-DAA11DBE056D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AB290B-C44C-4B8A-8809-DAA11DBE056D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AB290B-C44C-4B8A-8809-DAA11DBE056D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AB290B-C44C-4B8A-8809-DAA11DBE056D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B7882E9-E5DE-44F3-9B28-68ED2AEAA7E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B7882E9-E5DE-44F3-9B28-68ED2AEAA7E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B7882E9-E5DE-44F3-9B28-68ED2AEAA7E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B7882E9-E5DE-44F3-9B28-68ED2AEAA7E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

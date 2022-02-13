@@ -1,4 +1,4 @@
-﻿using BookAcademyWeb.Models;
+﻿using BookAcademy.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

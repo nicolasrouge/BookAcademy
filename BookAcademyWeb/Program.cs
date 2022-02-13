@@ -1,4 +1,4 @@
-using BookAcademyWeb.Data;
+using BookAcademy.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
