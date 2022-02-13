@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookAcademyWeb", "BookAcademyWeb\BookAcademyWeb.csproj", "{A07C213E-32A2-4038-B284-3E26C0EE9D32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookAcademy.DataAccess", "BookAcademy.DataAccess\BookAcademy.DataAccess.csproj", "{46F81B43-2123-401B-ADCB-BFEA232632C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A07C213E-32A2-4038-B284-3E26C0EE9D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07C213E-32A2-4038-B284-3E26C0EE9D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07C213E-32A2-4038-B284-3E26C0EE9D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07C213E-32A2-4038-B284-3E26C0EE9D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F81B43-2123-401B-ADCB-BFEA232632C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09D4E203-CB21-47CD-8A8B-9034E5CE6B11}
+	EndGlobalSection
+EndGlobal
