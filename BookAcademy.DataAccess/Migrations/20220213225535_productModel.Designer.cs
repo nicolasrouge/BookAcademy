@@ -4,6 +4,7 @@ using BookAcademy.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookAcademy.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220213225535_productModel")]
+    partial class productModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -96,9 +98,6 @@ namespace BookAcademy.DataAccess.Migrations
                     b.Property<double>("ListPrice")
                         .HasColumnType("float");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
                     b.Property<double>("Price100")
                         .HasColumnType("float");
 
@@ -115,7 +114,7 @@ namespace BookAcademy.DataAccess.Migrations
 
                     b.HasIndex("CoverTypeId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("BookAcademy.Models.Product", b =>
