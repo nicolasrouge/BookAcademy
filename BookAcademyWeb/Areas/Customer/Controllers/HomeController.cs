@@ -1,5 +1,7 @@
-﻿using BookAcademy.Models;
+﻿using BookAcademy.DataAccess.Repository.IRepository;
+using BookAcademy.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace BookAcademyWeb.Controllers
@@ -8,15 +10,18 @@ namespace BookAcademyWeb.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Product> productsList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            return View(productsList);
         }
 
         public IActionResult Privacy()
