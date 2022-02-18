@@ -1,5 +1,6 @@
 ﻿using BookAcademy.DataAccess.Repository.IRepository;
 using BookAcademy.Models;
+using BookAcademy.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,6 +23,19 @@ namespace BookAcademyWeb.Controllers
         {
             IEnumerable<Product> productsList = _unitOfWork.Product.GetAll(includeProperties: "Category");
             return View(productsList);
+        }
+
+        public IActionResult Details(int id)
+        {
+            ShoppingCartViewModel shoppingCartViewModel = new()
+            {
+                Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id, includeProperties: "Category"),
+                Count = 1
+            };
+
+        
+
+            return View(shoppingCartViewModel);
         }
 
         public IActionResult Privacy()
