@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace BookAcademy.DataAccess.Repository
 {
-    public class CompanyRepository : Repository<Company>, ICompanyRepository
+    public class CoverTypeRepository : Repository<CoverType>, ICoverTypeRepository
     {
         private readonly ApplicationDbContext _db;
 
-        public CompanyRepository(ApplicationDbContext db) : base(db)
+        public CoverTypeRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(Company company)
+        public void Update(CoverType coverType)
         {
-            _db.Companies.Update(company);
+            _db.CoverTypes.Update(coverType);
         }
     }
 }

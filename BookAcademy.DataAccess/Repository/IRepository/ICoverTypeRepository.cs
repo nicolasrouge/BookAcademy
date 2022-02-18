@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace BookAcademy.DataAccess.Repository.IRepository
 {
-    public interface ICompanyRepository : IRepository<Company>
+    public interface ICoverTypeRepository : IRepository<CoverType>
     {
-        void Update(Company company);
+        void Update(CoverType coverType);
     }
 }
