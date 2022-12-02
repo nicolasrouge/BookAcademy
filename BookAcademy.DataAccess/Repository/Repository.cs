@@ -17,7 +17,7 @@ namespace BookAcademy.DataAccess.Repository
         public Repository(ApplicationDbContext db)
         {
             _db = db;
-            _db.Products.Include(u => u.Category);
+            //_db.Products.Include(u => u.Category);
             _dbSet = _db.Set<T>();
         }
         public void Add(T entity)
@@ -25,10 +25,15 @@ namespace BookAcademy.DataAccess.Repository
             _dbSet.Add(entity);
         }
 
-        public IEnumerable<T> GetAll(string? includeProperties = null)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter=null, string? includeProperties = null)
         {
             IQueryable<T> query = _dbSet.AsQueryable();
-            if(includeProperties != null)
+            if(filter != null)
+            {
+                query = query.Where(filter);
+            }
+            
+            if (includeProperties != null)
             {
                 foreach(var includeProp in includeProperties.Split(new char[] { ','}, StringSplitOptions.RemoveEmptyEntries)){
                     query = query.Include(includeProp);
